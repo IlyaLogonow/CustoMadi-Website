@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CustoMadi</title>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero -->
+    <section class="et-hero-tabs">
+        <h1 class="et-hero-tabs__title">Custom clothing store</h1>
+        <img class="et-hero-tabs__logo" src="img/logo.svg" alt="">
+        <div class="et-hero-tabs-container">
+            <a class="et-hero-tab" href="#shop">Shop</a>
+            <a class="et-hero-tab" href="#shipping">Shipping</a>
+            <a class="et-hero-tab" href="#about-me">About Me</a>
+            <a class="et-hero-tab" href="#faq">faq</a>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main class="et-main">
+        <section class="shop" id="shop">
+            <div class="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
+                <p>Clothing</p>
+                <img src="img/Clothing.png" alt="Clothing">
+            </div>
+            <div class="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
+                <p>Shoes</p>
+                <img src="img/Shoes.png" alt="Shoes">
+            </div>
+            <div class="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
+                <p>Paintings</p>
+                <img src="img/Paintings.png" alt="Paintings">
+            </div>
+        </section>
+        <section class="shipping" id="shipping">
+            <div>
+                <!-- these radio buttons hold state of which card is in front and which toggle button is visible -->
+                <input type="radio" name="sushi-lunch" id="international-radio">
+                <input type="radio" name="sushi-lunch" id="russia-radio" checked>
+              
+                <div class="selector">
+                  <label for="international-radio" class="international-card">
+                    <button>Список стран</button>
+                    <h3 class="shipping__title">International shipping</h3>
+                    <ul class="shipping__list">
+                      <li class="shipping__item">Basic Shipping</li>
+                      <li class="shipping__item">Cost: $60</li>
+                      <li class="shipping__item">Time Frame: 1-2 months </li>
+                    </ul>
+                    <ul class="shipping__list">
+                        <li class="shipping__item">Fast Shipping (DHL)</li>
+                        <li class="shipping__item">Cost from: $170</li>
+                        <li class="shipping__item">Time Frame: 1-2 weeks</li>
+                      </ul>
+                  </label>
+              
+                  <label for="russia-radio" class="russia-card">
+                    <h3 class="shipping__title">Доставка по России</h3>
+                    <ul class="shipping__list">
+                        <li class="shipping__item">Обычная доставка (Почта России)</li>
+                        <li class="shipping__item">Цена: 400 рублей</li>
+                        <li class="shipping__item">Сроки доставки: 3-7 дней</li>
+                    </ul>
+                    <ul class="shipping__list">
+                        <li class="shipping__item">Быстрая доставка (СДЕК, BoxBerry)</li>
+                        <li class="shipping__item">Цена: от 600 рублей</li>
+                        <li class="shipping__item">Сроки доставки: 2-4 дня</li>
+                    </ul>
+                  </label>
+                  
+                  <label for="international-radio" class="international-pick">International</label>
+                  <label for="russia-radio" class="russia-pick">Россия</label>
+                </div>
+            </div>
+        </section>
+        <section class="et-slide about-me" id="about-me">
+            <h1>About Me</h1>
+            <h3>About Me</h3>
+        </section>
+        <section class="et-slide fqu" id="faq">
+            <h1>fqu</h1>
+            <h3>fqu</h3>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/tilt.jquery.js"></script>
+</body>
+</html>

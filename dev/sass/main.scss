@@ -1,0 +1,299 @@
+:root {
+  /*COLOR*/
+  --bacgraund: #F4FFE7;
+  --main-color: #080707;
+  --text-color: #F4FFE7;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  font: inherit/inherit inherit;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.vis-hid {
+  visibility: hidden
+}
+
+body {
+  font-family: 'Aboreto', cursive;
+}
+
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: var(--bacgraund);
+}
+.et-hero-tabs__logo {
+  width: 600px;
+  max-width: 100%;
+}
+
+.et-hero-tabs-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  -webkit-box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.37);
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.37);
+  background: var(--main-color);
+  z-index: 10;
+  &--top {
+      position: fixed;
+      top: 0;
+  }
+}
+
+.et-hero-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: var(--text-color);
+  letter-spacing: 0.1rem;
+  transition: all 0.8s ease;
+
+  &:hover {
+    color:var(--main-color);
+    background: var(--bacgraund);
+    transition: all 0.8s ease;
+  }
+}
+
+/*SHOP*/
+.shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.card {
+  width: 370px;
+  height: 410px;
+  padding: 2em;
+  border-radius: 1em;
+  border: 1px solid transparentize(#fff, 0.5);
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.20);
+  background: transparentize(#fff, 0.8);
+  backdrop-filter: blur(20px);
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  p {
+    position: absolute;
+    top: -30px;
+    right: 140px;
+    padding: 15px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 1em;
+  }
+}
+.card:hover {
+  box-shadow: 0px -5px 10px 5px rgba(0, 0, 0, 0.5)
+}
+
+/*SHIPPING*/
+.shipping {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+input {
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.selector {
+  display: grid;
+  grid-template-areas:
+    'happy lovers'
+    'pick  pick';
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+.international-card, .russia-card {
+  position: relative;
+  width: 400px;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.20);
+  background: transparentize(#fff, 0.8);
+  transform: perspective(500px);
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.international-card {
+  grid-area: happy;
+  margin-right: -10px; 
+  
+  --swing: -25px;
+  --overlap: 25px;
+}
+
+.russia-card {
+  grid-area: lovers;
+  margin-left: -10px; 
+
+  --swing: 25px;
+  --overlap: -25px;
+}
+
+#international-radio:checked ~ .selector .international-card,
+#russia-radio:checked ~ .selector .russia-card {
+  animation-name: swing-forwards;
+}
+
+@keyframes swing-forwards {
+  0% {
+    z-index: 1; 
+    transform: scale(0.9);
+  }
+  50% {
+    transform: translateX(var(--swing));
+  }
+  100% {
+    z-index: 2;
+    transform: translateX(var(--overlap)) scale(1.1);
+  }
+}
+
+#international-radio:checked ~ .selector .russia-card,
+#russia-radio:checked ~ .selector .international-card {
+  animation-name: swing-backwards;
+}
+
+@keyframes swing-backwards {
+  0% {
+    z-index: 2; 
+    transform: translateX(var(--overlap)) scale(1.1);
+  }
+  50% {
+    transform: translateX(var(--swing));
+  }
+  100% {
+    z-index: 1;
+    transform: scale(0.9);
+  }
+}
+
+.shipping__title {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #bdd6d2;
+  font-size: 1.5rem;
+}
+
+.shipping__list {
+  margin: 15px 0;
+  padding-left: 30px;
+  line-height: 1.5rem;
+  list-style-type: square;
+}
+
+.international-pick, .russia-pick {
+  grid-area: pick;
+  margin: 50px auto 0;
+  padding: 15px;
+  border: 1px solid #f4f7f7;
+  border-radius: 9999px;
+  background-color: black;
+  font-size: 1.25rem;
+  -webkit-user-select: none;
+  user-select: none;
+  color: #fff;
+}
+
+.international-pick::before, .russia-pick::after {
+  display: inline-block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+}
+
+.international-pick::before {
+  margin-right: 10px;
+  content: '<'; 
+}
+
+.russia-pick::after {
+  margin-left: 10px;
+  content: '>'; 
+}
+
+#international-radio:checked ~ .selector .international-pick {
+  display: none;
+}
+
+#russia-radio:checked ~ .selector .russia-pick {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .international-card {
+    margin-right: -85px;
+    --swing: -100px;
+  }
+
+  .russia-card {
+    margin-left: -85px;
+    --swing: 100px;
+  }
+}
+
