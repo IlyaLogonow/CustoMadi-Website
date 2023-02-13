@@ -43,7 +43,13 @@ a {
 }
 
 .vis-hid {
-  visibility: hidden
+  position: absolute;
+  visibility: hidden;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 25px;
 }
 
 body {
@@ -58,7 +64,6 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  background: var(--bacgraund);
 }
 .et-hero-tabs__logo {
   width: 600px;
@@ -297,3 +302,64 @@ label {
   }
 }
 
+/*ABOUT-ME*/
+.about-me__item:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.about-me__item p {
+  text-align: center;
+  font-size: 30px;
+  max-width: 1000px;
+}
+
+/*FQU*/
+.fqu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.accordion-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion {
+  background-color: white;
+  border: 3px #080707;
+  color: #080707;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.6s;
+}
+.active, .accordion:hover {
+  background-color: #080707;
+  color: #eee;
+}
+.accordion:after {
+  content: '\02795'; 
+  font-size: 13px;
+  color: #080707;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2796";
+}
+
+.panel {
+  padding: 0px 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out
+}
